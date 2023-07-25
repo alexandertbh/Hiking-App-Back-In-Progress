@@ -21,7 +21,7 @@ Hike.init(
       allowNull: true,
     },
     difficulty: {
-      type: DataTypes.NUMBER,
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     trailhead: {

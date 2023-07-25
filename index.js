@@ -10,8 +10,9 @@ app.use(express.urlencoded({ extended: true }));
 // const allRoutes = require("./controllers");
 
 // app.use(allRoutes);
+const { User, Trip } = require("./models")
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => {
     console.log(`listenin to port ${PORT}!`);
   });
