@@ -1,40 +1,38 @@
-//TODO: Finish adjusting the copy past of the sql database
+//TODO: Finish adjusting the copy paste of the sql database
 
-const Product = require("./product");
-const Category = require("./category");
-const Tag = require("./tag");
-const ProductTag = require("./ProductTag");
+const Hike = require("./Hike");
+const User = require("./User");
+const Trip = require("./Trip");
 
-// Products belongsTo Category
-Product.belongsTo(Category, {
-  foreignKey: "category_id",
+// Hike belongsTo Trip
+Hike.belongsToMany(Trip, {
+  through: TripHike,
+  foreignKey: "trip_id",
   onDelete: "CASCADE",
 });
 
-// Categories have many Products
-Category.hasMany(Product, {
-  foreignKey: "category_id",
+// Trip have many Hikes
+Trip.hasMany(Hikes, {
+  foreignKey: "hike_id",
   onDelete: "CASCADE",
 });
 
-// Products belongToMany Tags (through ProductTag)
-Product.belongsToMany(Tag, {
-  through: ProductTag,
+// Trip belongToMany User (through ProductTag)
+Trip.belongsToMany(User, {
   // as: 'product_tags',
-  foreignKey: "product_id",
+  foreignKey: "user_id",
 });
 
 // Tags belongToMany Products (through ProductTag)
-Tag.belongsToMany(Product, {
-  through: ProductTag,
+User.hasMany(Trip, {
+  through: UserTrip,
   // as: 'product_tags',
-  foreignKey: "tag_id",
-  //onDelete: "CASCADE",
+  foreignKey: "trip_id",
+  onDelete: "CASCADE",
 });
 
 module.exports = {
-  Product,
-  Category,
-  Tag,
-  ProductTag,
+  Hike,
+  User,
+  Trip,
 };
