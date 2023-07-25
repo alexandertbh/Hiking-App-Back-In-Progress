@@ -4,25 +4,25 @@ const Hike = require("./Hike");
 const User = require("./User");
 const Trip = require("./Trip");
 
-// Hike belongsTo Trip
 Hike.belongsToMany(Trip, {
   through: 'TripHike',
-  foreignKey: "trip_id",
-  onDelete: "CASCADE",
+  // foreignKey: "trip_id",
+  // onDelete: "CASCADE",
 });
 
 // Trip have many Hikes
-Trip.hasMany(Hike, {
-  foreignKey: "hike_id",
-  onDelete: "CASCADE",
+Trip.belongsToMany(Hike, {
+  through: 'TripHike',
+  // foreignKey: "hike_id",
+  // onDelete: "CASCADE",
 });
 
 // Tags belongToMany Products (through ProductTag)
 User.belongsToMany(Trip, {
   through: 'UserTrip',
   // as: 'product_tags',
-  foreignKey: "trip_id",
-  onDelete: "CASCADE",
+  // foreignKey: "trip_id",
+  // onDelete: "CASCADE",
 });
 
 // Trip belongToMany User (through ProductTag)
@@ -30,7 +30,7 @@ Trip.belongsToMany(User, {
   // as: 'product_tags',
   through: 'UserTrip',
 
-  foreignKey: "user_id",
+  // foreignKey: "user_id",
 });
 
 
