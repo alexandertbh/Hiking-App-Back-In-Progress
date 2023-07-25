@@ -1,5 +1,5 @@
 const express = require("express");
-const sequelize = require("./config/connection");
+const sequelize = require("./config");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,5 +16,3 @@ sequelize.sync({ force: false }).then(() => {
     console.log(`listenin to port ${PORT}!`);
   });
 });
- 
-
