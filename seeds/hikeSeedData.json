@@ -1,0 +1,37 @@
+ [
+      {
+        "name": "Mount Rainier Summit",
+        "miles": 14.2,
+        "elevation": 14411,
+        "difficulty": 5,
+        "trailhead": "Paradise"
+      },
+      {
+        "name": "Rattlesnake Ledge",
+        "miles": 4.0,
+        "elevation": 1160,
+        "difficulty": 2,
+        "trailhead": "Rattlesnake Lake"
+      },
+      {
+        "name": "Enchantments Traverse",
+        "miles": 18.0,
+        "elevation": 5500,
+        "difficulty": 5,
+        "trailhead": "Colchuck Lake"
+      },
+      {
+        "name": "Mount Si",
+        "miles": 8.0,
+        "elevation": 3150,
+        "difficulty": 3,
+        "trailhead": "Mount Si Trailhead"
+      },
+      {
+        "name": "Olympic National Park Coastline",
+        "miles": 35.0,
+        "elevation": 500,
+        "difficulty": 4,
+        "trailhead": "Rialto Beach"
+      }
+ ]
