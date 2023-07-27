@@ -1,8 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
-const api = require("./api");
-router.use("/api", api);
-
+const { User, Trip } = require("../../models");
 
 module.exports = router;

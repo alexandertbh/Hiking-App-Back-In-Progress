@@ -1,18 +1,18 @@
 const express = require("express");
 const sequelize = require("./config");
+const { User, Trip, Hike } = require("./models");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3001;
+console.log(process.env);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// const allRoutes = require("./controllers");
+const allRoutes = require("./controllers");
 
-// app.use(allRoutes);
-const { User, Trip } = require("./models")
+app.use(allRoutes);
 
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
     console.log(`listenin to port ${PORT}!`);
   });
