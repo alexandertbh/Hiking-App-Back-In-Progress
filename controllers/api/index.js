@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 });
 
 router.use("/hikes", hikeRouters);
-// router.use("/api/user".userRouters);
-// router.use("/api/trip".tripRouters);
+router.use("/trips", tripRouters);
+// router.use("/user".userRouters);
 
 module.exports = router;

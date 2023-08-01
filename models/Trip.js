@@ -7,6 +7,10 @@ class Trip extends Model {}
 Trip.init(
   {
     // add properites here, ex:
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     date: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -17,12 +21,6 @@ Trip.init(
   },
   {
     sequelize,
-    hooks: {
-      beforeCreate: (userObj) => {
-        userObj.password = bcrypt.hashSync(userObj.password, 4);
-        return userObj;
-      },
-    },
   }
 );
 

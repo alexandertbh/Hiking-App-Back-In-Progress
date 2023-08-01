@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Hike = require("../../models");
+const { Hike } = require("../../models");
 
 //get all hikes
 router.get("/", async (req, res) => {
