@@ -1,7 +1,10 @@
 const sequalize = require("../config/index");
-
-const Hike = require("../models/Hike");
+const { Hike, User, Trip } = require("../models");
+const router = express.Router();
 const hikeSeedData = require("./hikeSeedData.json");
+
+
+
 
 const seedHike = async () => {
   await sequalize.sync({ force: false });
